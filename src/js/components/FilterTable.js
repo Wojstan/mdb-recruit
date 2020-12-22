@@ -4,6 +4,7 @@ const FilterTable = () => {
   const items = table.querySelectorAll('tr');
 
   items.forEach((item) => {
+    //  Get category name from single item
     const tdCategory = item.querySelectorAll('td')[2].innerText;
     switch (selectFilter.value) {
       case 'All':

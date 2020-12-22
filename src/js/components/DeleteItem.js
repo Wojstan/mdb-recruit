@@ -1,5 +1,6 @@
 import SetGlobal from '../globalSets';
 
+// Delete item from local storage
 const deleteLocalItems = (tr) => {
   let items;
   if (localStorage.getItem('items')) {
@@ -14,9 +15,12 @@ const deleteLocalItems = (tr) => {
   localStorage.setItem('items', JSON.stringify(filteredItems));
 };
 
+// Delete item from table
 const DeleteItem = (tr) => {
   tr.remove();
   deleteLocalItems(tr);
+
+  //  Update summary values
   SetGlobal();
 };
 

@@ -1,8 +1,10 @@
+//  Setting summary values here
 const SetGlobal = () => {
   let itemsAmount = 0;
-  let itemsWeight = 0;
+  let itemsQuantity = 0;
   const allItems = JSON.parse(localStorage.getItem('items'));
   if (allItems) {
+    //  Summary quantity
     const quantityItems = allItems.filter((item) => item.type === 'Quantity');
     let summaryQuantity = { value: 0 };
     if (quantityItems.length > 0) {
@@ -13,6 +15,7 @@ const SetGlobal = () => {
       });
     }
 
+    //  Summary amount
     const amountItems = allItems.filter((item) => item.type === 'Amount');
     let summaryAmount = { value: 0 };
     if (amountItems.length > 0) {
@@ -24,16 +27,16 @@ const SetGlobal = () => {
     }
 
     itemsAmount = summaryAmount.value;
-    itemsWeight = parseFloat(summaryQuantity.value).toFixed(2);
+    itemsQuantity = parseFloat(summaryQuantity.value).toFixed(2);
 
     const positions = document.querySelector('.positions');
     positions.innerHTML = allItems.length;
   }
-  const weight = document.querySelector('.quantity');
-  weight.innerHTML = `${itemsWeight} kg`;
+  const quantity = document.querySelector('.quantity');
+  quantity.innerHTML = `${itemsQuantity} kg`;
 
-  const number = document.querySelector('.amount');
-  number.innerHTML = itemsAmount;
+  const amount = document.querySelector('.amount');
+  amount.innerHTML = itemsAmount;
 };
 
 export default SetGlobal;

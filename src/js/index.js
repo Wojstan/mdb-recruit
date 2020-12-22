@@ -5,10 +5,8 @@ import FilterTable from './components/FilterTable';
 import { addButton, selectFilter } from './globalDom';
 import AddItem from './components/AddItem';
 
+//  Basic event listeners
 document.addEventListener('DOMContentLoaded', GetItems);
 document.addEventListener('DOMContentLoaded', SetGlobal);
 selectFilter.addEventListener('change', FilterTable);
 addButton.addEventListener('click', AddItem);
-
-//  addButton.addEventListener("click", addItem);
-//  categoryFilter.addEventListener("change", filterItems);

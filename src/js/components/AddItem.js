@@ -8,9 +8,10 @@ import {
 } from '../globalDom';
 import SetGlobal from '../globalSets';
 import DeleteItem from './DeleteItem';
-import ModifyItem from './ModifyItem';
+import SelectToModify from './ModifyItem';
 import FilterTable from './FilterTable';
 
+// Adding item to local storage
 const addLocalItem = () => {
   let items;
   if (localStorage.getItem('items')) {
@@ -32,6 +33,7 @@ const addLocalItem = () => {
   localStorage.setItem('items', JSON.stringify(items));
 };
 
+// Adding item to table
 const AddItem = (event) => {
   event.preventDefault();
 
@@ -62,6 +64,7 @@ const AddItem = (event) => {
     tdValue.innerText = `${inputValue.value} kg`;
   }
 
+  //  Buttons for deleting and modifing tr
   const tdButtons = document.createElement('td');
   const deleteButton = document.createElement('button');
   deleteButton.innerText = 'Delete';
@@ -71,9 +74,9 @@ const AddItem = (event) => {
   const modifyButton = document.createElement('button');
   modifyButton.innerText = 'Modify';
   modifyButton.classList.add('blue-button');
-  modifyButton.addEventListener('click', () => ModifyItem(trItem));
+  modifyButton.addEventListener('click', () => SelectToModify(trItem));
 
-  //    Setting category filter to this category
+  //  Set current category filter to this category
   selectFilter.value = selectCategory.value;
   FilterTable();
 
@@ -87,6 +90,8 @@ const AddItem = (event) => {
 
   table.appendChild(trItem);
   addLocalItem();
+
+  //  Update summary values
   SetGlobal();
 };
 export default AddItem;

@@ -1,7 +1,8 @@
 import { table } from '../globalDom';
 import DeleteItem from './DeleteItem';
-import ModifyItem from './ModifyItem';
+import SelectToModify from './ModifyItem';
 
+//  Get items from local storage
 const GetItems = () => {
   let items;
   if (localStorage.getItem('items')) {
@@ -11,16 +12,16 @@ const GetItems = () => {
   }
   items.forEach((item) => {
     const trItem = document.createElement('tr');
-    //  Item id
+
     const tdId = document.createElement('td');
     tdId.innerText = item.id;
-    //  Item name
+
     const tdName = document.createElement('td');
     tdName.innerText = item.name;
-    //  Item category
+
     const tdCategory = document.createElement('td');
     tdCategory.innerText = item.category;
-    //  Item number
+
     const tdValue = document.createElement('td');
     if (item.type === 'Amount') {
       tdValue.innerText = item.value;
@@ -28,6 +29,7 @@ const GetItems = () => {
       tdValue.innerText = `${item.value} kg`;
     }
 
+    //  Buttons for deleting and modifying tr
     const tdButtons = document.createElement('td');
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Delete';
@@ -37,7 +39,7 @@ const GetItems = () => {
     const modifyButton = document.createElement('button');
     modifyButton.innerText = 'Modify';
     modifyButton.classList.add('blue-button');
-    modifyButton.addEventListener('click', () => ModifyItem(trItem));
+    modifyButton.addEventListener('click', () => SelectToModify(trItem));
 
     tdButtons.appendChild(deleteButton);
     tdButtons.appendChild(modifyButton);
