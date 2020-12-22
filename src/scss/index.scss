@@ -1,1 +1,124 @@
-@import '~mdb-ui-kit/css/mdb.min.css';
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #242424;
+}
+
+h4,
+h5,
+p {
+  font-weight: 300;
+}
+h1,
+h3 {
+  font-weight: 400;
+}
+.red {
+  color: #ee6557;
+  font-weight: 500;
+}
+.select-filter {
+  width: 20vh;
+}
+
+.blue {
+  color: #16a6b6;
+  font-weight: 500;
+}
+
+.red-button {
+  background-color: #ee6557;
+  color: white;
+}
+.blue-button {
+  background-color: #16a6b6;
+  color: white;
+}
+
+.block,
+.block-table {
+  background-color: white;
+  margin-bottom: 3vh;
+  box-shadow: 0 2px 4px 0 rgba(185, 185, 185, 0.2), 0 3px 10px 0 rgba(206, 206, 206, 0.19);
+}
+
+.block {
+  padding: 1rem;
+}
+
+.value-present {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6vh;
+}
+
+.table-header {
+  padding: 1rem;
+}
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: center;
+
+  thead {
+    background-color: #362f4b;
+    text-transform: uppercase;
+    color: white;
+
+    th {
+      font-weight: 500;
+      padding: 1rem;
+    }
+  }
+  td {
+    font-family: 'Poppins', sans-serif;
+    padding: 0.5rem;
+  }
+  button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+.table-footer {
+  padding: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control {
+  background-color: #dfdfdf;
+  border: none;
+}
+
+.main-header {
+  margin-top: 3vh;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+}
